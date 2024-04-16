@@ -10,9 +10,9 @@ You are encouraged to use the provided naming convention for ease of review.
 /* create variables to hold the values for modelName and duration */
 
 // INSERT YOUR CODE HERE
-
 let modelName = "XYZ";
 let duration = 0;
+
 
 
 
@@ -32,14 +32,15 @@ function recalculate()
 {
     let costLabel = document.getElementById("calculated-cost");
 
-    if (modelName == "XYZ") {costLabel = duration * 100;}
-    else if (modelName == "CPRG") {costLabel = duration * 213;}             
+    if (modelName == "XYZ") {
+        costLabel = duration * 100;
+    }
+    else if (modelName == "CPRG") {
+        costLabel = duration * 213;
+    }             
     
     document.getElementById("calculated-cost").innerHTML = costLabel;
-
 }
-
-
 
 
 
@@ -58,23 +59,24 @@ function recalculate()
     // modelButton.addEventListener("click", changeModel);
 
 // INSERT YOUR CODE HERE
-let switchModelButton = document.getElementById('model-button');
-switchModelButton.addEventListener("click", changeModel);
+let modelButton = document.getElementById("model-button");
+
 
 function changeModel()
 {
-    let modelText = document.getElementById('model-text');
+    let modelText = document.getElementById("model-text");
 
-    if (modelName == "XYZ"){ modelName = "CPRG"; modelText.innerHTML = "Model CPRG";}
-    else if (modelName == "CPRG"){modelName = "XYZ"; modelText.innerHTML = "Model XYZ";}
+    if (modelName == "XYZ"){
+        modelName = "CPRG"; modelText.innerHTML = "Model CPRG";
+        }
+    else if (modelName == "CPRG"){
+        modelName = "XYZ"; modelText.innerHTML = "Model XYZ";
+    }
 
     recalculate();
 }
 
-
-
-
-
+modelButton.addEventListener("click", changeModel);
 
 
 /****************** duration button logic ******************/
@@ -89,8 +91,9 @@ function changeModel()
 */
 
 // INSERT YOUR CODE HERE
+
 let changeDurationButton = document.getElementById('duration-button');
-changeDurationButton.addEventListener("click", changeDuration);
+
 
 function changeDuration()
 {
@@ -101,5 +104,4 @@ function changeDuration()
     recalculate();
 }
 
-
-
+changeDurationButton.addEventListener("click", changeDuration);
